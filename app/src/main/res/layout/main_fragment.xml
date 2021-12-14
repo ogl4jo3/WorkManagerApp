@@ -7,23 +7,53 @@
 
         <variable
             name="viewModel"
-            type="com.example.workmanagerapp.MainViewModel" />
+            type="com.example.workmanagerapp.ui.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainFragment">
+        tools:context=".ui.MainFragment">
 
-        <TextView
+        <Button
+            android:id="@+id/btn_fetch_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={viewModel.message}"
+            android:onClick="@{v -> viewModel.fetchAsiaTaipeiTime()}"
+            android:text="api fetch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_get_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{v -> viewModel.getPreferencesDatetime()}"
+            android:text="datastore get"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.datetime}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="test" />
+            tools:text="2021-12-14T10:54:02.573295+08:00" />
+
+        <TextView
+            android:id="@+id/tv_client_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@={viewModel.clientIp}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_datetime"
+            tools:text="210.61.209.201" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,4 +1,4 @@
-package com.example.workmanagerapp
+package com.example.workmanagerapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,6 +24,7 @@ class MainFragment : Fragment() {
     ): View {
         binding = MainFragmentBinding.inflate(inflater, container, false).apply {
             viewModel = this@MainFragment.viewModel
+            lifecycleOwner = viewLifecycleOwner
         }
         return binding.root
     }

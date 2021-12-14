@@ -3,4 +3,5 @@
 - Hilt
 - WorkManager
 - Retrofit
-- Room
+- Moshi
+- DataStore

@@ -1,10 +1,14 @@
 package com.example.workmanagerapp.di
 
+import android.content.Context
 import com.example.workmanagerapp.BuildConfig
 import com.example.workmanagerapp.api.WorldTimeApiService
+import com.example.workmanagerapp.data.TimePreferencesRepository
+import com.example.workmanagerapp.ui.dataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,6 +21,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    @Provides
+    @Singleton
+    fun provideDataStoreManager(
+        @ApplicationContext appContext: Context
+    ): TimePreferencesRepository = TimePreferencesRepository(appContext.dataStore)
 
 }
 

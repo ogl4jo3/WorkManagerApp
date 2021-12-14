@@ -6,6 +6,6 @@ import retrofit2.http.GET
 interface WorldTimeApiService {
 
     @GET("api/timezone/Asia/Taipei")
-    suspend fun fetchWorldTime(): Response<WorldTimeResponse>
+    suspend fun fetchAsiaTaipeiTime(): Response<WorldTimeResponse>
 
 }

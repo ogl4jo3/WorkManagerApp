@@ -1,0 +1,17 @@
+{
+  "abbreviation": "CST",
+  "client_ip": "210.61.209.201",
+  "datetime": "2021-12-14T10:54:02.573295+08:00",
+  "day_of_week": 2,
+  "day_of_year": 348,
+  "dst": false,
+  "dst_from": null,
+  "dst_offset": 0,
+  "dst_until": null,
+  "raw_offset": 28800,
+  "timezone": "Asia/Taipei",
+  "unixtime": 1639450442,
+  "utc_datetime": "2021-12-14T02:54:02.573295+00:00",
+  "utc_offset": "+08:00",
+  "week_number": 50
+}
